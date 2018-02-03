@@ -1,15 +1,26 @@
 ---
 dependency:
   name: galaxy
+#driver:
+#  name: vagrant
+#  provider:
+#    name: virtualbox
 driver:
-  name: vagrant
-  provider:
-    name: virtualbox
+   name: gce
 lint:
   name: yamllint
+#platforms:
+#  - name: instance
+#    box: ubuntu/xenial64
 platforms:
   - name: instance
-    box: ubuntu/xenial64
+    instance_names: "travis-db"
+    zone: "europe-west1-b"
+    machine_type: "f1-micro"
+    image: "ubuntu-1604-xenial-v20180126"
+    service_account_email: "{{ lookup('env', 'GCE_SERVICE_ACCOUNT_EMAIL') }}"
+    credentials_file: "{{ lookup('env', 'GCE_CREDENTIALS_FILE') }}"
+    project_id: "{{ lookup('env', 'GCE_PROJECT_ID') }}"
 provisioner:
   name: ansible
   lint:
