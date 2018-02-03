@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/epanoff/infra-db-ansible.svg?branch=master)](https://travis-ci.org/epanoff/infra-db-ansible)
+
 Role Name
 =========
 
