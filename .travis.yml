@@ -3,7 +3,7 @@ python:
 - '2.7'
 install:
 - pip install ansible==2.3.0 molecule apache-libcloud
-cript:
+script:
 - molecule create
 - molecule converge
 - molecule verify
