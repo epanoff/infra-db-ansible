@@ -3,3 +3,5 @@
 *.pub
 credentials.json
 google_compute_engine
+.pytest_cache
+*.pyc
